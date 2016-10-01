@@ -22,6 +22,10 @@ class Log_model extends MY_Model {
             $this->db->where('MONTHNAME(datetime)', ucfirst($month_year_exploded[0]));
             $this->db->where('YEAR(datetime)', $month_year_exploded[1]);
         }
+        
+        if(isset($params['starttime']) && isset($params['endtime']) && $params['starttime'] != "" && $params['endtime'] != ""){
+            $this->db->where("datetime BETWEEN '" . $params['starttime'] . "' AND '" . $params['endtime'] . "'");
+        }
 
         $this->db->order_by($orderby, $direction);
         $query = $this->db->get($this->_table);

@@ -9,12 +9,12 @@ and open the template in the editor.
     <meta charset="UTF-8">
     <title>Ozy's Logging System</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap-sandstone.min.css'); ?>">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="<?php echo base_url('assets/jquery/jquery.min.js'); ?>"></script>
     
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
     
     <style type="text/css">
       body{
@@ -31,7 +31,8 @@ and open the template in the editor.
           
           <p>
             <a href="<?php echo site_url('home'); ?>">Create Log</a> | 
-            <a href="<?php echo site_url('logs/index/latest'); ?>">View Logs</a>
+            <a href="<?php echo site_url('logs/index/latest'); ?>">Logs</a> | 
+            <a href="<?php echo site_url('calendar'); ?>">Calendar</a>
           </p>
           
           <?php if(isset($NOTIFICATION_ERROR)): ?>

@@ -14,15 +14,20 @@
       <input type="text" name="datetime" class="form-control" value="<?php if(isset($log)) echo date("Y-m-d H:i:s", strtotime($log->datetime)); else if(isset($time)) echo date("Y-m-d H:i:s", $time); else echo date("Y-m-d H:i:s"); ?>" placeholder="YYYY-MM-DD hh:mm:ss (hours should be in 24 hr format)">
     </div>
   </div>
-    <div class="form-group">
-        <div class="col-sm-12">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="wholeday" /> Whole Day
-                </label>
+    
+    <!-- This will not be displayed on edits-->
+    <?php if(!isset($log)): ?>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="wholeday" /> Whole Day
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
+    
   <div class="form-group">
     <div class="col-sm-12">
       <button type="submit" class="btn btn-primary btn-lg btn-block">Save</button>
