@@ -63,7 +63,7 @@ class Logs extends MY_Controller {
 
                     if(!$logExists){
 
-                        $log = null;
+                        $log = new stdClass();
                         $log->id = 0;
                         $log->title = "--- --- ---";
                         $log->text = "--- --- ---";
